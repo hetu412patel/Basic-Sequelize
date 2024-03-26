@@ -1,0 +1,36 @@
+Migration
+
+1. install library in the project
+- npm install sequelize-cli
+
+2. initiate project folder structure
+- npx sequelize-cli init
+
+3. change config file according to database and it's credentials besides different environment
+
+4. if we initiate project in new folder then it need to set path in .sequelizerc file with the help of path module of node.js
+
+5. initiate model using sequalize-cli
+- npx sequelize-cli model:generate --name model_name --attributes att1_name:DATATYPE,att2_name:DATATYPE,att3_name:DATATYPE
+
+6. create migration file for creating table in that database
+=> migration file run only once with existing name if you want some changes in it then after updating that file change it's name and then again run below command for migration.
+=> according to that changes, change up and down methods with it's functions/methods in migration file and again run migration after changing that file's name.
+- npx sequelize-cli db:migrate
+
+7. if you want to undo most recent migration then
+- npx sequelize-cli db:migrate:undo
+=> undo all migration which was made after creating table as well as create the table
+- npx sequelize-cli db:migrate:undo:all
+=> undo some specific migration then
+- npx sequelize-cli db:migrate:undo:all --name migration_file_name.js
+
+8. if you want to enter data in the table after run migration seeders come. So, for creating seeder file
+- npx sequelize-cli seed:generate --name file_name 
+
+9. create query as per requirements for getting data from the database in up and down method which are exist in the seeder file.
+=> when you run that particular seeder file it run always up method 
+=> for running seeder file there are not needed to change that file name.
+=> for running specific seeder file to apply changes on the db table
+- npx sequelize-cli db:seed --seed seeder_file_name.js
+=> according to migration you can undo your seeder file changes as well with different commands.

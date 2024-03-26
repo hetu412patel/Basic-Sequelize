@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "aspire@123",
+    "database": "ocr",
+    "host": "192.168.2.12",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "aspire@123",
+    "database": "ocr",
+    "host": "192.168.2.12",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "aspire@123",
+    "database": "ocr",
+    "host": "192.168.2.12",
+    "dialect": "postgres"
+  }
+}
